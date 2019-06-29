@@ -23,6 +23,16 @@ const post = (req,res) => {
 }
 
 const put = (req,res) => {
+  let id = req.params.id;
+  let name = req.body.name;
+  let priority = req.body.priority
+  dbHelpers.updateTodo(id, name, priority, (err, data) => {
+    if(err) {
+      res.status(404).send('Error updating todo');
+    } else {
+      res.status(201).send('Updated todo successfully');
+    }
+  })
 
 }
 

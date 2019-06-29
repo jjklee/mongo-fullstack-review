@@ -9,7 +9,7 @@ router
 router 
   .route('/todos/:id')
   .delete(controllers.destroy)
-  // .put(controller.update)
+  .put(controllers.put)
 
 
 module.exports = router;

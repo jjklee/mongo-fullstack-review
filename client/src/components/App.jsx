@@ -49,14 +49,14 @@ class App extends React.Component {
       
   }
 
-  // updateData(id, name, priority){
-  //   axios.put(`/api/todos/${id}`, {name, priority})
-  //   .then( () => {
-  //       console.log('Update data');
-  //       this.fetchData();
-  //   })
-  //   .catch( err => console.error('Could not update data', err));
-  // }
+  updateData(id, name, priority){
+    axios.put(`/api/todos/${id}`, {name, priority})
+    .then( () => {
+        console.log('Update data');
+        this.fetchData();
+    })
+    .catch( err => console.error('Could not update data', err));
+  }
 
   updateTodo(index, change) {
     const target = this.state.todos[index];

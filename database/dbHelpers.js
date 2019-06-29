@@ -35,8 +35,11 @@ const deleteTodo = (_id, callback) => {
 };
 
 // updateTodo should update todo at _id using req.body
-const updateTodo = () => {
-
+const updateTodo = (_id, name, priority, callback) => {
+  Todo
+    .findOneAndUpdate({ _id }, { name, priority }, (err) => {
+      callback(err)
+    })
 }
 
 module.exports = {
